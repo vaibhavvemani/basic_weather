@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/(weather)/weather/[slug]/+page.svelte";
