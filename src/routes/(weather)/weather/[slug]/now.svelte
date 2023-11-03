@@ -18,7 +18,7 @@
 </script>
 
 <div class="presentcontainer glass">
-  <h1>{location}</h1>
+  <h1>Rome</h1>
   <h4>12:34:49AM</h4>
   <div class="weather-card">
     <div class="icon-container">
@@ -27,29 +27,22 @@
       </div>
 
       <div class="temperature">
-        <h1>{temperature}°</h1>
+        <h1>87°</h1>
         <p>Feels like: 89°</p>
       </div>
     </div>
 
     <div class="card-info">
-      <p>Condition: {condition}</p>
+      <p>Condition: Windy</p>
       <hr />
       <p>Wind Speeds: who cares</p>
       <hr />
-      <p>Condition: Pretty bad ig</p>
+      <p>Visibility: Barely</p>
       <hr />
     </div>
   </div>
   <hr />
   <div class="presentinfo">
-    <p>Name:</p>
-    <p>Local Time:</p>
-    <p>Temperature: F/C</p>
-    <p>Feels like: F/C</p>
-    <p>Condition:</p>
-    <p>Visibility:</p>
-    <p>Wind Speeds: mph/kph</p>
     <p>Wind gusts:</p>
     <p>Pressure: mb/in</p>
     <p>Precipitaion: mm/in</p>
@@ -131,6 +124,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    gap: 10px;
+    gap: 13px;
   }
 </style>

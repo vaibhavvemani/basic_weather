@@ -1,8 +1,19 @@
 <div class="daily glass">
   <h1>Daily Forcast</h1>
-  <p>Highest tempreatures seen:</p>
-  <p>Lowest Tempreatures seen:</p>
-  <p>Whatever else this is:</p>
+  <div class="card-container">
+    <div class="card">
+      <p>Day</p>
+      <p>67</p>
+    </div>
+    <div class="card">
+      <p>Day</p>
+      <p>67</p>
+    </div>
+    <div class="card">
+      <p>Day</p>
+      <p>67</p>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -31,5 +42,19 @@
     height: 90%;
     width: 100%;
     padding: 10px;
+  }
+  .card-container {
+    height: 86%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card {
+    height: 100%;
+    width: 30%;
+    background-color: #12121276;
+    border-radius: 5px;
   }
 </style>

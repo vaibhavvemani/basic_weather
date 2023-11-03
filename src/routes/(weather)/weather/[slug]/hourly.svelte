@@ -1,6 +1,19 @@
 <div class="hourly glass">
   <h1>Hourly Forcast</h1>
-  <p>Check today's forcast changes every hour.</p>
+  <div class="card-container">
+    <div class="card">
+      <p>Hour: 1</p>
+      <p>56</p>
+    </div>
+    <div class="card">
+      <p>Hour: 2</p>
+      <p>67</p>
+    </div>
+    <div class="card">
+      <p>Hour: 3</p>
+      <p>89</p>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -30,5 +43,20 @@
     height: 90%;
     width: 100%;
     padding: 10px;
+  }
+
+  .card-container {
+    height: 86%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card {
+    height: 100%;
+    width: 30%;
+    background-color: #12121276;
+    border-radius: 5px;
   }
 </style>
