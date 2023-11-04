@@ -7,7 +7,7 @@
 
   onMount(async () => {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=58c018eea6c840be83c75506232204&q=${slug}`
+      `https://api.weatherapi.com/v1/current.json?key=58c018eea6c840be83c75506232204&q=${slug}`
     );
     const data = await response.json();
     location = data.location.name;

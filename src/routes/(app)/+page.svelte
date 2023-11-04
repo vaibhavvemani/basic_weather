@@ -48,7 +48,7 @@
   .back {
     height: 93vh;
     width: 100vw;
-    background-image: url("weatherSkyBackDrop.png");
+    background-image: url("/static/weatherSkyBackDrop.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: absolute;
