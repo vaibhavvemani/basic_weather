@@ -2,7 +2,21 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
 
-  let location, temperature, condition, condition_icon;
+  let location,
+    temperature,
+    condition,
+    condition_icon,
+    local_time,
+    feels_like,
+    wind_kph,
+    pressure,
+    precip,
+    humidity,
+    vision,
+    uv,
+    wind_gust,
+    wind_dir,
+    wind_deg;
   let slug = $page.params.slug;
 
   onMount(async () => {
@@ -11,15 +25,26 @@
     );
     const data = await response.json();
     location = data.location.name;
-    temperature = data.current.temp_f;
+    temperature = data.current.temp_c;
+    feels_like = data.current.feelslike_c;
     condition = data.current.condition.text;
     condition_icon = data.current.condition.icon;
+    local_time = data.location.localtime;
+    wind_kph = data.current.wind_kph;
+    pressure = data.current.pressure_in;
+    precip = data.current.precip_in;
+    humidity = data.current.humidity;
+    vision = data.current.vis_km;
+    uv = data.current.uv;
+    wind_gust = data.current.gust_kph;
+    wind_deg = data.current.wind_degree;
+    wind_dir = data.current.wind_dir;
   });
 </script>
 
 <div class="presentcontainer glass">
-  <h1>Rome</h1>
-  <h4>12:34:49AM</h4>
+  <h1>{location}</h1>
+  <h4>{local_time}</h4>
   <div class="weather-card">
     <div class="icon-container">
       <div class="icon">
@@ -27,27 +52,29 @@
       </div>
 
       <div class="temperature">
-        <h1>87°</h1>
-        <p>Feels like: 89°</p>
+        <h1>{temperature}°</h1>
+        <p>Feels like: {feels_like}°</p>
       </div>
     </div>
 
     <div class="card-info">
-      <p>Condition: Windy</p>
+      <p>Condition: {condition}</p>
       <hr />
-      <p>Wind Speeds: who cares</p>
+      <p>Wind Speeds: {wind_kph}</p>
       <hr />
-      <p>Visibility: Barely</p>
+      <p>Visibility: {vision}</p>
       <hr />
     </div>
   </div>
   <hr />
   <div class="presentinfo">
-    <p>Wind gusts:</p>
-    <p>Pressure: mb/in</p>
-    <p>Precipitaion: mm/in</p>
-    <p>Humidity:</p>
-    <p>UV levels:</p>
+    <p>Wind gusts: {wind_gust}</p>
+    <p>Wind degree: {wind_deg}</p>
+    <p>Wind direction: {wind_dir}</p>
+    <p>Pressure: {pressure}</p>
+    <p>Precipitaion: {precip}</p>
+    <p>Humidity: {humidity}</p>
+    <p>UV levels: {uv}</p>
   </div>
 </div>
 
