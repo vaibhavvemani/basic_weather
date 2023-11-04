@@ -13,6 +13,18 @@
       <p>Hour: 3</p>
       <p>89</p>
     </div>
+    <div class="card">
+      <p>Hour: 1</p>
+      <p>56</p>
+    </div>
+    <div class="card">
+      <p>Hour: 2</p>
+      <p>67</p>
+    </div>
+    <div class="card">
+      <p>Hour: 3</p>
+      <p>89</p>
+    </div>
   </div>
 </div>
 
@@ -47,14 +59,16 @@
 
   .card-container {
     height: 86%;
-
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
   }
 
   .card {
-    height: 100%;
+    height: 45%;
     width: 30%;
     background-color: #12121276;
     border-radius: 5px;

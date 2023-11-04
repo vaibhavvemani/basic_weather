@@ -6,13 +6,15 @@
 </script>
 
 <div class="mainpage">
-  <Scroll />
+  <div class="scroll-container">
+    <Scroll />
+  </div>
   <div class="past-future-container">
     <Now />
-    <div class="forcast-container">
-      <Hourly />
-      <Daily />
-    </div>
+  </div>
+  <div class="forcast-container">
+    <Hourly />
+    <Daily />
   </div>
 </div>
 
@@ -27,22 +29,26 @@
     height: 100vh;
     width: 100vw;
     padding: 10px;
-    color: black;
-    /* background-image: linear-gradient(0deg,#d8eeee,#d8eeee 25%,#64adc9 65%,#005986 90%,#005986); */
     background-image: url(./../../../../../pexels-arnie-chou-1229042.jpg);
 
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
   }
+
+  .scroll-container {
+    width: 33%;
+    height: 90%;
+  }
+
   .past-future-container {
-    width: 75%;
+    width: 33%;
     height: 90%;
 
-    display: flex;
-    gap: 2rem;
+    /* display: flex; */
+    /* gap: 2rem; */
   }
 
   .forcast-container {
@@ -50,7 +56,7 @@
     gap: 2rem;
     flex-direction: column;
 
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 34%;
   }
 </style>
