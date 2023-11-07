@@ -1,20 +1,18 @@
 <script>
-  import Hourly from "./hourly.svelte";
-  import Daily from "./daily.svelte";
-  import Now from "./now.svelte";
-  import Scroll from "./scroll.svelte";
+  import Current from "./current.svelte";
+  import Country_img from "./country_img.svelte";
+  import Forecast from "./forecast.svelte";
 </script>
 
 <div class="mainpage">
   <div class="scroll-container">
-    <Scroll />
+    <Country_img />
   </div>
-  <div class="past-future-container">
-    <Now />
+  <div class="current-container">
+    <Current />
   </div>
   <div class="forcast-container">
-    <Hourly />
-    <Daily />
+    <Forecast />
   </div>
 </div>
 
@@ -29,34 +27,60 @@
     height: 100vh;
     width: 100vw;
     padding: 10px;
-    background-image: url(./../../../../../pexels-arnie-chou-1229042.jpg);
 
-    /* position: relative; */
+    background-image: url(./../../../../../pexels-arnie-chou-1229042.jpg);
+    
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    overflow: scroll;
+  }
+
+  @media (max-width: 1060px) {
+    .mainpage {
+      height: 200vh;
+      width: 100vw;
+      padding: 10px;
+
+      background-image: url(./../../../../../pexels-arnie-chou-1229042.jpg);
+      overflow: scroll;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      }
+    
+    .scroll-container {
+      display: none;
+    }
+
+    .current-container {
+      height: 100%;
+    }
+
+    .forcast-container {
+      height: 100%;
+    }
   }
 
   .scroll-container {
-    width: 33%;
     height: 90%;
+    flex: 1 1 28%;
+    display: none;
   }
 
-  .past-future-container {
-    width: 33%;
-    height: 90%;
 
-    /* display: flex; */
-    /* gap: 2rem; */
+  .current-container {
+    height: 90%;
+    flex: 1 1 36%;
   }
 
   .forcast-container {
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-
+    flex: 1 1 36%;
     height: 90%;
-    width: 34%;
   }
 </style>
