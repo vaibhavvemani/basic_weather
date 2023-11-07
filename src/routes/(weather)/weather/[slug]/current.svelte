@@ -127,7 +127,7 @@
   }
   .icon {
     height: 40%;
-    width: 40%;
+    width: 30%;
   }
   .icon img {
     width: 100%;
