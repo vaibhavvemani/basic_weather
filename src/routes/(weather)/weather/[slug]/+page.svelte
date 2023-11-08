@@ -28,32 +28,30 @@
     width: 100vw;
     padding: 10px;
 
-    background-image: url(./../../../../../pexels-arnie-chou-1229042.jpg);
-    
+    background-image: url(weatherSkyBackDrop.png);
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-
-    overflow: scroll;
   }
 
-  @media (max-width: 1060px) {
+  @media (max-width: 800px) {
     .mainpage {
       height: 200vh;
       width: 100vw;
       padding: 10px;
 
-      background-image: url(./../../../../../pexels-arnie-chou-1229042.jpg);
+      background-image: url("../../weather/[slug]/weatherSkyBackDrop.png");
+      background-size: 100% 100%;
       overflow: scroll;
-      
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
 
-      }
-    
     .scroll-container {
       display: none;
     }
@@ -72,7 +70,6 @@
     flex: 1 1 28%;
     display: none;
   }
-
 
   .current-container {
     height: 90%;

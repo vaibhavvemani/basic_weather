@@ -8,8 +8,7 @@
       clearInterval(baby);
     }
   }, 100);
-
-  let babytitle = `erutuf ruoy tciderp emmel no dloH`;
+  let babytitle = `etis rehtaew gnirob itna ehT`;
   let babyman = "";
   let k = babytitle.length - 1;
   const boy = setInterval(() => {
@@ -26,48 +25,60 @@
 </script>
 
 <main>
-  <div class="back" />
-  <div class="homepagecontainer">
-    <div class="textcont">
-      <div class="headcont">
-        <h1 contenteditable="true" bind:innerText={lilman}>|</h1>
+  <div class="back">
+    <div class="homepagecontainer">
+      <div class="textcont">
+        <div class="headcont">
+          <h1 contenteditable="false" bind:innerText={lilman}>|</h1>
+        </div>
+        <div class="pcont">
+          <h3 contenteditable="false" bind:innerText={babyman}>|</h3>
+        </div>
       </div>
-      <div class="pcont">
-        <h3 contenteditable="true" bind:innerText={babyman}>|</h3>
+      <div class="input">
+        <input
+          type="text"
+          bind:value={weather}
+          placeholder="Place name"
+        /><button on:click={reroute}>Predict</button>
       </div>
-    </div>
-    <div class="input">
-      <input type="text" bind:value={weather} /><button on:click={reroute}
-        >predict</button
-      >
     </div>
   </div>
 </main>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300;400;500&display=swap");
+  * {
+    font-family: "Red Hat Mono", monospace;
+    font-size: 30px;
+    color: white;
+    overflow: hidden;
+  }
+
   .back {
-    height: 93vh;
+    height: 100vh;
     width: 100vw;
+    padding: 10px;
     background-image: url("src/routes/(app)/weatherSkyBackDrop.png");
     background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: -1;
   }
 
   .homepagecontainer {
+    height: 100%;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    height: 25rem;
     color: #ddd0c8;
+
+    overflow: hidden;
   }
 
   .textcont {
-    height: 72px;
-    width: 375px;
+    height: 82px;
+    width: 600px;
   }
 
   .pcont {

@@ -68,13 +68,34 @@
   </div>
   <hr />
   <div class="presentinfo">
-    <p>Wind gusts: {wind_gust}</p>
-    <p>Wind degree: {wind_deg}</p>
-    <p>Wind direction: {wind_dir}</p>
-    <p>Pressure: {pressure}</p>
-    <p>Precipitaion: {precip}</p>
-    <p>Humidity: {humidity}</p>
-    <p>UV levels: {uv}</p>
+    <div class="presentinfo-elements">
+      <p>Wind gusts:</p>
+      <span>{wind_gust}</span>
+    </div>
+    <div class="presentinfo-elements">
+      <p>Wind degree:</p>
+      <span>{wind_deg}</span>
+    </div>
+    <div class="presentinfo-elements">
+      <p>Wind direction:</p>
+      <span>{wind_dir}</span>
+    </div>
+    <div class="presentinfo-elements">
+      <p>Pressure:</p>
+      <span>{pressure}</span>
+    </div>
+    <div class="presentinfo-elements">
+      <p>Precipitaion:</p>
+      <span>{precip}</span>
+    </div>
+    <div class="presentinfo-elements">
+      <p>Humidity:</p>
+      <span>{humidity}</span>
+    </div>
+    <div class="presentinfo-elements">
+      <p>UV levels:</p>
+      <span>{uv}</span>
+    </div>
   </div>
 </div>
 
@@ -103,14 +124,27 @@
     padding: 10px;
   }
   .presentinfo {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 3rem;
 
     padding-top: 20px;
   }
+
+  .presentinfo-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .presentinfo p {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
   hr {
-    background-color: gray;
+    background-color: white;
     height: 2px;
   }
   .weather-card {
@@ -127,7 +161,7 @@
   }
   .icon {
     height: 40%;
-    width: 30%;
+    width: 25%;
   }
   .icon img {
     width: 100%;
