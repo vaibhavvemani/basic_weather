@@ -59,7 +59,7 @@
     height: 100vh;
     width: 100vw;
     padding: 10px;
-    background-image: url("src/routes/(app)/weatherSkyBackDrop.png");
+    background-image: url("weatherSkyBackDrop.png");
     background-size: 100% 100%;
   }
 
