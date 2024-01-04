@@ -36,11 +36,9 @@
         </div>
       </div>
       <div class="input">
-        <input
-          type="text"
-          bind:value={weather}
-          placeholder="Place name"
-        /><button on:click={reroute}>Predict</button>
+        <input type="text" bind:value={weather} placeholder="Location" /><button
+          on:click={reroute}>Predict</button
+        >
       </div>
     </div>
   </div>

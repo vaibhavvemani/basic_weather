@@ -5,9 +5,9 @@
 </script>
 
 <div class="mainpage">
-  <div class="scroll-container">
+  <!-- <div class="scroll-container">
     <Country_img />
-  </div>
+  </div> -->
   <div class="current-container">
     <Current />
   </div>
@@ -52,9 +52,9 @@
       align-items: center;
     }
 
-    .scroll-container {
+    /* .scroll-container {
       display: none;
-    }
+    } */
 
     .current-container {
       height: 100%;
@@ -65,11 +65,11 @@
     }
   }
 
-  .scroll-container {
+  /* .scroll-container {
     height: 90%;
     flex: 1 1 28%;
     display: none;
-  }
+  } */
 
   .current-container {
     height: 90%;
