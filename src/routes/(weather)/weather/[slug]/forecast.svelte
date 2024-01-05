@@ -14,63 +14,75 @@
 
 <div class="hourly glass">
   <div class="timeline">
-    <div class="date-container left-date-container">
-      <h3>12/11/2023</h3>
+    <div class="date-dot-container">
+      <div class="date-container left-date-container">
+        <h3>12/11/2023</h3>
+      </div>
+      <div class="dot-container">
+        <div class="dot" />
+      </div>
     </div>
+    <br />
     <div class="container left-container">
       <div class="text-box">
         <h2>Max</h2>
         <h2>Min</h2>
       </div>
     </div>
-    <div class="date-container right-date-container">
-      <h3>12/11/2023</h3>
+    <div class="date-dot-container">
+      <div class="date-container right-date-container">
+        <h3>12/11/2023</h3>
+      </div>
+      <div class="dot-container">
+        <div class="dot" />
+      </div>
     </div>
+    <br />
     <div class="container right-container">
       <div class="text-box">
         <h2>Max</h2>
         <h2>Min</h2>
       </div>
     </div>
-    <div class="date-container left-date-container">
-      <h3>12/11/2023</h3>
+    <div class="date-dot-container">
+      <div class="date-container left-date-container">
+        <h3>12/11/2023</h3>
+      </div>
+      <div class="dot-container">
+        <div class="dot" />
+      </div>
     </div>
+    <br />
     <div class="container left-container">
       <div class="text-box">
         <h2>Max</h2>
         <h2>Min</h2>
       </div>
     </div>
-    <div class="date-container right-date-container">
-      <h3>12/11/2023</h3>
+    <div class="date-dot-container">
+      <div class="date-container right-date-container">
+        <h3>12/11/2023</h3>
+      </div>
+      <div class="dot-container">
+        <div class="dot" />
+      </div>
     </div>
+    <br />
     <div class="container right-container">
       <div class="text-box">
         <h2>Max</h2>
         <h2>Min</h2>
       </div>
     </div>
-    <div class="date-container left-date-container">
-      <h3>12/11/2023</h3>
-    </div>
-    <div class="container left-container">
-      <div class="text-box">
-        <h2>Max</h2>
-        <h2>Min</h2>
+    <div class="date-dot-container">
+      <div class="date-container left-date-container">
+        <h3>12/11/2023</h3>
+      </div>
+      <div class="dot-container">
+        <div class="dot" />
       </div>
     </div>
-    <div class="date-container right-date-container">
-      <h3>12/11/2023</h3>
-    </div>
-    <div class="container right-container">
-      <div class="text-box">
-        <h2>Max</h2>
-        <h2>Min</h2>
-      </div>
-    </div>
-    <div class="date-container left-date-container">
-      <h3>12/11/2023</h3>
-    </div>
+    <br />
     <div class="container left-container">
       <div class="text-box">
         <h2>Max</h2>
@@ -85,6 +97,18 @@
   * {
     font-family: "Red Hat Mono", monospace;
     color: white;
+  }
+
+  @media (max-width: 800px) {
+    .date-container h3 {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .date-container h3 {
+      font-size: 12px;
+    }
   }
 
   .glass {
@@ -135,8 +159,10 @@
 
   .date-container {
     position: relative;
-    width: 35%;
-    height: 4%;
+    /* width: 35%; */
+    min-width: 35%;
+    max-width: 35%;
+    height: 100%;
 
     background-image: linear-gradient(to right, #f86464, #eb4a4a);
     border-radius: 50px;
@@ -145,6 +171,12 @@
     justify-content: center;
     align-items: center;
   }
+
+  .date-dot-container {
+    display: flex;
+    gap: 66px;
+  }
+
   .container {
     position: relative;
     width: 50%;
@@ -157,6 +189,14 @@
     align-items: center;
     border-radius: 100px;
     background-color: #edadad;
+  }
+
+  .dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #eb4a4a;
+    flex: 1 1 50%;
   }
 
   .left-date-container {

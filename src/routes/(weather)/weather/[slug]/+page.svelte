@@ -36,7 +36,7 @@
     gap: 2rem;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1300px) {
     .mainpage {
       height: 200vh;
       width: 100vw;
@@ -58,10 +58,12 @@
 
     .current-container {
       height: 100%;
+      width: 100%;
     }
 
     .forcast-container {
       height: 100%;
+      width: 100%;
     }
   }
 
