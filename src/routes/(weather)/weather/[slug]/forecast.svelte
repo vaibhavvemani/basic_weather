@@ -1,14 +1,27 @@
 <script>
   import { onMount } from "svelte";
   import { page } from "$app/stores";
-  let slug = $page.params.slug;
+  // dt = new Date();
+  // function hours(dt) {
+  //   return dt.getHours();
+  // }
 
+  let slug = $page.params.slug;
+  var hour_now, hour1, hour2, hour3, hour4, hour5, hour1_temp;
   onMount(async () => {
     const response = await fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=58c018eea6c840be83c75506232204&q=${slug}`
     );
 
     const data = await response.json();
+    hour_now = new Date().getHours();
+    hour1 = data.forecast.forecastday[0].hour[hour_now].time;
+    hour2 = data.forecast.forecastday[0].hour[hour_now + 1].time;
+    hour3 = data.forecast.forecastday[0].hour[hour_now + 2].time;
+    hour4 = data.forecast.forecastday[0].hour[hour_now + 3].time;
+    hour5 = data.forecast.forecastday[0].hour[hour_now + 4].time;
+
+    hour1_temp = data.forecast.forecastday[0].hour[hour_now].temp_f;
   });
 </script>
 
@@ -16,25 +29,19 @@
   <div class="timeline">
     <div class="date-dot-container">
       <div class="date-container left-date-container">
-        <h3>12/11/2023</h3>
-      </div>
-      <div class="dot-container">
-        <div class="dot" />
+        <h3>{hour1}</h3>
       </div>
     </div>
     <br />
     <div class="container left-container">
       <div class="text-box">
-        <h2>Max</h2>
+        <h2>Temp: {hour1_temp}</h2>
         <h2>Min</h2>
       </div>
     </div>
     <div class="date-dot-container">
       <div class="date-container right-date-container">
-        <h3>12/11/2023</h3>
-      </div>
-      <div class="dot-container">
-        <div class="dot" />
+        <h3>{hour2}</h3>
       </div>
     </div>
     <br />
@@ -46,10 +53,7 @@
     </div>
     <div class="date-dot-container">
       <div class="date-container left-date-container">
-        <h3>12/11/2023</h3>
-      </div>
-      <div class="dot-container">
-        <div class="dot" />
+        <h3>{hour3}</h3>
       </div>
     </div>
     <br />
@@ -61,10 +65,7 @@
     </div>
     <div class="date-dot-container">
       <div class="date-container right-date-container">
-        <h3>12/11/2023</h3>
-      </div>
-      <div class="dot-container">
-        <div class="dot" />
+        <h3>{hour4}</h3>
       </div>
     </div>
     <br />
@@ -76,10 +77,11 @@
     </div>
     <div class="date-dot-container">
       <div class="date-container left-date-container">
-        <h3>12/11/2023</h3>
-      </div>
-      <div class="dot-container">
-        <div class="dot" />
+        {#if hour_now + 4 >= 24}
+          <h3>Come back tmr :)</h3>
+        {:else}
+          <h3>{hour5}</h3>
+        {/if}
       </div>
     </div>
     <br />
