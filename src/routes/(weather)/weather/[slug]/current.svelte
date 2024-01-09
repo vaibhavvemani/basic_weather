@@ -52,7 +52,7 @@
       </div>
 
       <div class="temperature">
-        <h1>{temperature}°</h1>
+        <h1>Temp: {temperature}°</h1>
         <p>Feels like: {feels_like}°</p>
       </div>
     </div>
@@ -152,6 +152,19 @@
 
     display: flex;
   }
+
+  @media (max-width: 750px) {
+    .icon-container {
+      position: relative;
+      width: 50%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   .icon-container {
     width: 50%;
 
@@ -161,7 +174,7 @@
   }
   .icon {
     height: 40%;
-    width: 25%;
+    min-width: 25%;
   }
   .icon img {
     width: 100%;

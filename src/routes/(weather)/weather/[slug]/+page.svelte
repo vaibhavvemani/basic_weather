@@ -38,7 +38,7 @@
 
   @media (max-width: 1300px) {
     .mainpage {
-      height: 200vh;
+      height: 210vh;
       width: 100vw;
       padding: 10px;
 
