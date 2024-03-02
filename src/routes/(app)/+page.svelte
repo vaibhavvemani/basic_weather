@@ -74,8 +74,15 @@
   }
 
   .textcont {
-    height: 82px;
+    margin: 3px;
+    height: 40vh;
     width: 600px;
+    max-width: 60vw;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .pcont {
