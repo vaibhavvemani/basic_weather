@@ -124,12 +124,16 @@
     padding: 10px;
   }
   .presentinfo {
-    width: 50%;
+    width: 100%;
+    height: 60%;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     gap: 3rem;
 
-    padding-top: 20px;
+    padding-block: 20px;
+    padding-inline: 10px;
+    overflow: hidden;
   }
 
   .presentinfo-elements {

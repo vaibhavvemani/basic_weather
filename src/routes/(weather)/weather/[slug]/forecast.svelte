@@ -30,11 +30,11 @@
 
     const data = await response.json();
     hour_now = new Date().getHours();
-    hour1 = data.forecast.forecastday[0].hour[hour_now + 1].time;
-    hour2 = data.forecast.forecastday[0].hour[hour_now + 2].time;
-    hour3 = data.forecast.forecastday[0].hour[hour_now + 3].time;
-    hour4 = data.forecast.forecastday[0].hour[hour_now + 4].time;
-    hour5 = data.forecast.forecastday[0].hour[hour_now + 5].time;
+    // hour1 = hour_now + 1;
+    // hour2 = hour_now + 2;
+    // hour3 = data.forecast.forecastday[0].hour[hour_now + 3].time;
+    // hour4 = data.forecast.forecastday[0].hour[hour_now + 4].time;
+    // hour5 = data.forecast.forecastday[0].hour[hour_now + 5].time;
 
     hour1_temp = data.forecast.forecastday[0].hour[hour_now + 1].temp_f;
     hour2_temp = data.forecast.forecastday[0].hour[hour_now + 2].temp_f;
@@ -59,7 +59,7 @@
   <div class="timeline">
     <div class="date-dot-container">
       <div class="date-container left-date-container">
-        <h3>{hour1}</h3>
+        <h3>{hour_now + 1}:00</h3>
       </div>
     </div>
     <br />
@@ -71,7 +71,7 @@
     </div>
     <div class="date-dot-container">
       <div class="date-container right-date-container">
-        <h3>{hour2}</h3>
+        <h3>{hour_now + 2}:00</h3>
       </div>
     </div>
     <br />
@@ -83,7 +83,7 @@
     </div>
     <div class="date-dot-container">
       <div class="date-container left-date-container">
-        <h3>{hour3}</h3>
+        <h3>{hour_now + 3}:00</h3>
       </div>
     </div>
     <br />
@@ -95,7 +95,7 @@
     </div>
     <div class="date-dot-container">
       <div class="date-container right-date-container">
-        <h3>{hour4}</h3>
+        <h3>{hour_now + 4}:00</h3>
       </div>
     </div>
     <br />
@@ -110,7 +110,7 @@
         {#if hour_now + 4 >= 24}
           <h3>Come back tmr :)</h3>
         {:else}
-          <h3>{hour5}</h3>
+          <h3>{hour_now + 5}:00</h3>
         {/if}
       </div>
     </div>

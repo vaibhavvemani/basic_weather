@@ -25,23 +25,23 @@
 </script>
 
 <main>
-  <div class="back">
-    <div class="homepagecontainer">
-      <div class="textcont">
-        <div class="headcont">
-          <h1 contenteditable="false" bind:innerText={lilman}>|</h1>
-        </div>
-        <div class="pcont">
-          <h3 contenteditable="false" bind:innerText={babyman}>|</h3>
-        </div>
+  <!-- <div class="back"> -->
+  <div class="homepagecontainer">
+    <div class="textcont">
+      <div class="headcont">
+        <h1 contenteditable="false" bind:innerText={lilman}>|</h1>
       </div>
-      <div class="input">
-        <input type="text" bind:value={weather} placeholder="Location" /><button
-          on:click={reroute}>Predict</button
-        >
+      <div class="pcont">
+        <h3 contenteditable="false" bind:innerText={babyman}>|</h3>
       </div>
     </div>
+    <div class="input">
+      <input type="text" bind:value={weather} placeholder="Location" /><button
+        on:click={reroute}>Predict</button
+      >
+    </div>
   </div>
+  <!-- </div> -->
 </main>
 
 <style>
@@ -53,20 +53,19 @@
     overflow: hidden;
   }
 
-  .back {
+  main {
     height: 100vh;
     width: 100vw;
-    padding: 10px;
-    background-image: url("weatherSkyBackDrop.png");
-    background-size: 100% 100%;
+    background-image: url("./weatherSkyBackDrop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .homepagecontainer {
     height: 100%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    /* gap: 1rem; */
     align-items: center;
     justify-content: center;
     color: #ddd0c8;

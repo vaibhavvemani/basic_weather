@@ -43,7 +43,8 @@
       padding: 10px;
 
       background-image: url("../../weather/[slug]/weatherSkyBackDrop.png");
-      background-size: 100% 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
       overflow: scroll;
 
       display: flex;
