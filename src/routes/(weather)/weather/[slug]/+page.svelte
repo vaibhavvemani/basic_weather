@@ -24,8 +24,8 @@
   }
 
   .mainpage {
-    height: 100vh;
-    width: 100vw;
+    height: 100svh;
+    width: 100svw;
     padding: 10px;
 
     background-image: url(weatherSkyBackDrop.png);
@@ -38,8 +38,8 @@
 
   @media (max-width: 1300px) {
     .mainpage {
-      height: 210vh;
-      width: 100vw;
+      height: 200svh;
+      width: 100svw;
       padding: 10px;
 
       background-image: url("../../weather/[slug]/weatherSkyBackDrop.png");
