@@ -22,6 +22,12 @@
   function reroute() {
     window.open(`/weather/${weather}`);
   }
+
+  function checkKey(e) {
+    if (e.key == "Enter") {
+      reroute();
+    }
+  }
 </script>
 
 <main>
@@ -36,9 +42,13 @@
       </div>
     </div>
     <div class="input">
-      <input type="text" bind:value={weather} placeholder="Location" /><button
-        on:click={reroute}>Predict</button
-      >
+      <input
+        type="text"
+        bind:value={weather}
+        placeholder="Location"
+        on:keydown={checkKey}
+      />
+      <button on:click={reroute}>Search</button>
     </div>
   </div>
   <!-- </div> -->
@@ -100,16 +110,20 @@
   }
 
   .input {
+    height: 34px;
     margin-top: 20px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #f99a94;
     border-radius: 10px;
   }
+
   .input button {
     padding: 0;
-    border: none;
-    height: 35px;
-    width: 7rem;
+    border: 0;
+    height: 34px;
+    width: 6rem;
     background-color: #d47871;
     color: #fff;
     font-size: 20px;
@@ -117,10 +131,10 @@
     border-radius: 10px;
   }
   .input button:hover {
-    background-color: #dda592;
+    background-color: #a1524d;
   }
   .input input {
-    padding: 5px;
+    padding: 10px;
     font-size: 20px;
     background-color: #f99a94;
     border-radius: 10px;

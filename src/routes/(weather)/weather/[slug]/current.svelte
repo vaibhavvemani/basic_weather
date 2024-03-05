@@ -178,13 +178,14 @@
   }
   .icon {
     height: 40%;
-    min-width: 25%;
+    min-height: 92px;
+    min-width: 92px;
   }
   .icon img {
     width: 100%;
     height: 100%;
 
-    object-fit: fill;
+    object-fit: contain;
   }
 
   .card-info {
