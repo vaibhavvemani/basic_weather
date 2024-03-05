@@ -110,6 +110,7 @@
   }
 
   .input {
+    width: 9em;
     height: 34px;
     margin-top: 20px;
     display: flex;
@@ -123,7 +124,7 @@
     padding: 0;
     border: 0;
     height: 34px;
-    width: 6rem;
+    min-width: 6rem;
     background-color: #d47871;
     color: #fff;
     font-size: 20px;
@@ -134,7 +135,8 @@
     background-color: #a1524d;
   }
   .input input {
-    padding: 10px;
+    height: 34px;
+    padding-left: 10px;
     font-size: 20px;
     background-color: #f99a94;
     border-radius: 10px;

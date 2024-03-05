@@ -36,11 +36,21 @@
     // hour4 = data.forecast.forecastday[0].hour[hour_now + 4].time;
     // hour5 = data.forecast.forecastday[0].hour[hour_now + 5].time;
 
-    hour1_temp = data.forecast.forecastday[0].hour[hour_now + 1].temp_f;
-    hour2_temp = data.forecast.forecastday[0].hour[hour_now + 2].temp_f;
-    hour3_temp = data.forecast.forecastday[0].hour[hour_now + 3].temp_f;
-    hour4_temp = data.forecast.forecastday[0].hour[hour_now + 4].temp_f;
-    hour5_temp = data.forecast.forecastday[0].hour[hour_now + 5].temp_f;
+    hour1_temp = Math.floor(
+      data.forecast.forecastday[0].hour[hour_now + 1].temp_f
+    );
+    hour2_temp = Math.floor(
+      data.forecast.forecastday[0].hour[hour_now + 2].temp_f
+    );
+    hour3_temp = Math.floor(
+      data.forecast.forecastday[0].hour[hour_now + 3].temp_f
+    );
+    hour4_temp = Math.floor(
+      data.forecast.forecastday[0].hour[hour_now + 4].temp_f
+    );
+    hour5_temp = Math.floor(
+      data.forecast.forecastday[0].hour[hour_now + 5].temp_f
+    );
 
     hour1_condition =
       data.forecast.forecastday[0].hour[hour_now + 1].condition.icon;
@@ -131,7 +141,7 @@
     color: white;
   }
 
-  @media (max-width: 900px) {
+  /* @media (max-width: 900px) {
     .date-container h3 {
       font-size: 15px;
     }
@@ -140,8 +150,8 @@
       width: 30%;
     }
   }
-
-  @media (max-width: 750px) {
+ */
+  /* @media (max-width: 750px) {
     .date-container h3 {
       font-size: 12px;
     }
@@ -162,7 +172,7 @@
       width: 75%;
       height: 75%;
     }
-  }
+  } */
 
   .glass {
     background: linear-gradient(
@@ -192,6 +202,7 @@
     max-width: 1200px;
     height: 100%;
     width: 60%;
+    min-width: 300px;
 
     display: flex;
     flex-direction: column;
@@ -232,8 +243,8 @@
 
   .container {
     position: relative;
-    min-width: 50%;
-    width: 50%;
+    min-width: 150px;
+    width: 40%;
     height: 13%;
     padding: 15px;
 
