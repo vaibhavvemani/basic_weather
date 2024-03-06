@@ -1,13 +1,9 @@
 <script>
   import Current from "./current.svelte";
-  import Country_img from "./country_img.svelte";
   import Forecast from "./forecast.svelte";
 </script>
 
 <div class="mainpage">
-  <!-- <div class="scroll-container">
-    <Country_img />
-  </div> -->
   <div class="current-container">
     <Current />
   </div>
@@ -53,10 +49,6 @@
       align-items: center;
     }
 
-    /* .scroll-container {
-      display: none;
-    } */
-
     .current-container {
       height: 100%;
       width: 100%;
@@ -67,12 +59,6 @@
       width: 100%;
     }
   }
-
-  /* .scroll-container {
-    height: 90%;
-    flex: 1 1 28%;
-    display: none;
-  } */
 
   .current-container {
     height: 90%;
