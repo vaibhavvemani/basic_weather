@@ -164,7 +164,7 @@
 
   .date-dot-container {
     display: flex;
-    gap: 66px;
+    /* gap: 66px;  */
   }
 
   .container {
@@ -179,7 +179,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    background-color: #edadad;
+    /* background-color: #edadad; */
+    background-color: #f86464;
   }
 
   .text-box {
@@ -194,7 +195,7 @@
   }
 
   .left-container {
-    left: -5%;
+    left: -4%;
   }
 
   .right-date-container {

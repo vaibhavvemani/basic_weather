@@ -42,7 +42,6 @@
       background-image: url("../../weather/[slug]/weatherSkyBackDrop.png");
       background-size: cover;
       background-repeat: no-repeat;
-      overflow: scroll;
 
       display: flex;
       flex-direction: column;

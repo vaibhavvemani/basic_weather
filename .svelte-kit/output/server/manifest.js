@@ -1,10 +1,10 @@
 export const manifest = {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set(["pexels-arnie-chou-1229042.jpg"]),
-	mimeTypes: {".jpg":"image/jpeg"},
+	assets: new Set([]),
+	mimeTypes: {},
 	_: {
-		client: {"start":{"file":"_app/immutable/entry/start.31929abe.js","imports":["_app/immutable/entry/start.31929abe.js","_app/immutable/chunks/index.18fc26b9.js","_app/immutable/chunks/singletons.5e182bee.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.45aa5db2.js","imports":["_app/immutable/entry/app.45aa5db2.js","_app/immutable/chunks/index.18fc26b9.js"],"stylesheets":[],"fonts":[]}},
+		client: {"start":{"file":"_app/immutable/entry/start.0612f7b1.js","imports":["_app/immutable/entry/start.0612f7b1.js","_app/immutable/chunks/index.73007eae.js","_app/immutable/chunks/singletons.37228578.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.38f29334.js","imports":["_app/immutable/entry/app.38f29334.js","_app/immutable/chunks/index.73007eae.js"],"stylesheets":[],"fonts":[]}},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
