@@ -1,134 +1,93 @@
 <script>
-  import { onMount } from "svelte";
-  import { page } from "$app/stores";
-  // dt = new Date();
-  // function hours(dt) {
-  //   return dt.getHours();
-  // }
+  export let info;
 
-  let slug = $page.params.slug;
-  var hour_now,
-    hour1,
-    hour2,
-    hour3,
-    hour4,
-    hour5,
-    hour1_temp,
-    hour2_temp,
-    hour3_temp,
-    hour4_temp,
-    hour5_temp,
-    hour1_condition,
-    hour2_condition,
-    hour3_condition,
-    hour4_condition,
-    hour5_condition;
-  onMount(async () => {
-    const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=58c018eea6c840be83c75506232204&q=${slug}`
-    );
+  const weather_codes = {
+    "01d": "ClearDay",
+    "01n": "ClearNight",
+    "02d": "CloudyDay",
+    "02n": "CloudyNight",
+    "03d": "CloudyDay",
+    "03n": "CloudyNight",
+    "04d": "Cloudy",
+    "04n": "Cloudy",
+    "09d": "CloudRain",
+    "09n": "CloudRain",
+    "10d": "RainyDay",
+    "10n": "RainyNight",
+    "11d": "Thunder",
+    "11n": "Thunder",
+    "13d": "SnowyDay",
+    "13n": "SnowyNight",
+  };
 
-    const data = await response.json();
-    hour_now = new Date().getHours();
-    // hour1 = hour_now + 1;
-    // hour2 = hour_now + 2;
-    // hour3 = data.forecast.forecastday[0].hour[hour_now + 3].time;
-    // hour4 = data.forecast.forecastday[0].hour[hour_now + 4].time;
-    // hour5 = data.forecast.forecastday[0].hour[hour_now + 5].time;
-
-    hour1_temp = Math.floor(
-      data.forecast.forecastday[0].hour[hour_now + 1].temp_f
-    );
-    hour2_temp = Math.floor(
-      data.forecast.forecastday[0].hour[hour_now + 2].temp_f
-    );
-    hour3_temp = Math.floor(
-      data.forecast.forecastday[0].hour[hour_now + 3].temp_f
-    );
-    hour4_temp = Math.floor(
-      data.forecast.forecastday[0].hour[hour_now + 4].temp_f
-    );
-    hour5_temp = Math.floor(
-      data.forecast.forecastday[0].hour[hour_now + 5].temp_f
-    );
-
-    hour1_condition =
-      data.forecast.forecastday[0].hour[hour_now + 1].condition.icon;
-    hour2_condition =
-      data.forecast.forecastday[0].hour[hour_now + 2].condition.icon;
-    hour3_condition =
-      data.forecast.forecastday[0].hour[hour_now + 3].condition.icon;
-    hour4_condition =
-      data.forecast.forecastday[0].hour[hour_now + 4].condition.icon;
-    hour5_condition =
-      data.forecast.forecastday[0].hour[hour_now + 5].condition.icon;
+  let event = new Date();
+  const current_month = event.toLocaleDateString(undefined, {
+    month: "long",
   });
+
+  const current_day = event.getDate();
 </script>
 
 <div class="hourly glass">
   <div class="timeline">
     <div class="date-dot-container">
       <div class="date-container left-date-container">
-        <h3>{hour_now + 1}:00</h3>
+        <h3>{current_month + " " + current_day}</h3>
       </div>
     </div>
     <br />
     <div class="container left-container">
       <div class="text-box">
-        <h2>{hour1_temp}F°</h2>
-        <img src={hour1_condition} alt="Condition at current hour" />
+        <h2>{info.day1_temp}°C</h2>
+        <div class={weather_codes[info.day1_condition]} />
       </div>
     </div>
     <div class="date-dot-container">
       <div class="date-container right-date-container">
-        <h3>{hour_now + 2}:00</h3>
+        <h3>{current_month} {current_day + 1}</h3>
       </div>
     </div>
     <br />
     <div class="container right-container">
       <div class="text-box">
-        <h2>{hour2_temp}F°</h2>
-        <img src={hour2_condition} alt="Condition at current hour" />
+        <h2>{info.day2_temp}°C</h2>
+        <div class={weather_codes[info.day2_condition]} />
       </div>
     </div>
     <div class="date-dot-container">
       <div class="date-container left-date-container">
-        <h3>{hour_now + 3}:00</h3>
+        <h3>{current_month} {current_day + 2}</h3>
       </div>
     </div>
     <br />
     <div class="container left-container">
       <div class="text-box">
-        <h2>{hour3_temp}F°</h2>
-        <img src={hour3_condition} alt="Condition at current hour" />
+        <h2>{info.day3_temp}°C</h2>
+        <div class={weather_codes[info.day3_condition]} />
       </div>
     </div>
     <div class="date-dot-container">
       <div class="date-container right-date-container">
-        <h3>{hour_now + 4}:00</h3>
+        <h3>{current_month} {current_day + 3}</h3>
       </div>
     </div>
     <br />
     <div class="container right-container">
       <div class="text-box">
-        <h2>{hour4_temp}F°</h2>
-        <img src={hour4_condition} alt="Condition at current hour" />
+        <h2>{info.day4_temp}°C</h2>
+        <div class={weather_codes[info.day4_condition]} />
       </div>
     </div>
     <div class="date-dot-container">
       <div class="date-container left-date-container">
-        {#if hour_now + 4 >= 24}
-          <h3>Come back tmr :)</h3>
-        {:else}
-          <h3>{hour_now + 5}:00</h3>
-        {/if}
+        <h3>{current_month} {current_day + 4}</h3>
       </div>
     </div>
     <br />
     <div class="container left-container">
       <div class="text-box">
-        <h2>{hour5_temp}F°</h2>
-        <img src={hour5_condition} alt="Condition at current hour" />
+        <h2>{info.day5_temp}°C</h2>
+        <div class={weather_codes[info.day5_condition]} />
       </div>
     </div>
   </div>
@@ -140,39 +99,6 @@
     font-family: "Red Hat Mono", monospace;
     color: white;
   }
-
-  /* @media (max-width: 900px) {
-    .date-container h3 {
-      font-size: 15px;
-    }
-
-    .container {
-      width: 30%;
-    }
-  }
- */
-  /* @media (max-width: 750px) {
-    .date-container h3 {
-      font-size: 12px;
-    }
-
-    .container {
-      font-size: 10px;
-    }
-
-    .text-box {
-      display: flex;
-      flex-direction: column;
-      gap: none;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .text-box {
-      width: 75%;
-      height: 75%;
-    }
-  } */
 
   .glass {
     background: linear-gradient(
@@ -245,7 +171,7 @@
     position: relative;
     min-width: 150px;
     width: 40%;
-    height: 13%;
+    height: 6em;
     padding: 15px;
 
     display: flex;
@@ -258,15 +184,9 @@
 
   .text-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
-  }
-
-  .text-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
   }
 
   .left-date-container {
@@ -283,5 +203,90 @@
 
   .right-container {
     left: 55%;
+  }
+
+  .ClearDay {
+    height: 58.6px;
+    width: 58.6px;
+    background-image: url("static/ClearDay.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .ClearNight {
+    width: 68px;
+    height: 75.5px;
+    background-image: url("static/ClearNight.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .CloudRain {
+    height: 56px;
+    width: 76px;
+    background-image: url("static/CloudRain.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .Cloudy {
+    height: 50px;
+    width: 70px;
+    background-image: url("static/Cloudy.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .CloudyDay {
+    height: 50px;
+    width: 70px;
+    background-image: url("static/CloudyDay.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .CloudyNight {
+    height: 50px;
+    width: 70px;
+    background-image: url("static/CloudyNight.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .RainyDay {
+    height: 50px;
+    width: 70px;
+    background-image: url("static/RainyDay.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .RainyNight {
+    height: 50px;
+    width: 70px;
+    background-image: url("static/RainyNight.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .Snow {
+    height: 50px;
+    width: 70px;
+    background-image: url("static/Snow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .SnowyDay {
+    height: 63px;
+    width: 65.5px;
+    background-image: url("static/SnowyDay.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .SnowyNight {
+    height: 50px;
+    width: 70px;
+    background-image: url("static/SnowyNight.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .Thunder {
+    background-image: url("static/Thunder.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 70px;
   }
 </style>

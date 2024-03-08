@@ -1,6 +1,7 @@
 <script>
   import Current from "./current.svelte";
   import Forecast from "./forecast.svelte";
+  export let data;
 </script>
 
 <div class="mainpage">
@@ -8,7 +9,7 @@
     <Current />
   </div>
   <div class="forcast-container">
-    <Forecast />
+    <Forecast info={data} />
   </div>
 </div>
 
