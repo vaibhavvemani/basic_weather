@@ -4,7 +4,7 @@ export const manifest = {
 	assets: new Set([]),
 	mimeTypes: {},
 	_: {
-		client: {"start":{"file":"_app/immutable/entry/start.0612f7b1.js","imports":["_app/immutable/entry/start.0612f7b1.js","_app/immutable/chunks/index.73007eae.js","_app/immutable/chunks/singletons.37228578.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.38f29334.js","imports":["_app/immutable/entry/app.38f29334.js","_app/immutable/chunks/index.73007eae.js"],"stylesheets":[],"fonts":[]}},
+		client: {"start":{"file":"_app/immutable/entry/start.65e4241e.js","imports":["_app/immutable/entry/start.65e4241e.js","_app/immutable/chunks/index.73007eae.js","_app/immutable/chunks/singletons.0147677a.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.5512e4c3.js","imports":["_app/immutable/entry/app.5512e4c3.js","_app/immutable/chunks/index.73007eae.js"],"stylesheets":[],"fonts":[]}},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),

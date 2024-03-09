@@ -30,63 +30,42 @@
 
 <div class="hourly glass">
   <div class="timeline">
-    <div class="date-dot-container">
-      <div class="date-container left-date-container">
-        <h3>{current_month + " " + current_day}</h3>
-      </div>
-    </div>
-    <br />
-    <div class="container left-container">
+    <div class="container left-container glass">
+      <h3>{current_month + " " + current_day}</h3>
       <div class="text-box">
-        <h2>{info.day1_temp}°C</h2>
+        <p>{info.day1_temp}°C</p>
         <div class={weather_codes[info.day1_condition]} />
       </div>
     </div>
-    <div class="date-dot-container">
-      <div class="date-container right-date-container">
-        <h3>{current_month} {current_day + 1}</h3>
-      </div>
-    </div>
-    <br />
+
     <div class="container right-container">
+      <h3>{current_month} {current_day + 1}</h3>
       <div class="text-box">
-        <h2>{info.day2_temp}°C</h2>
+        <p>{info.day2_temp}°C</p>
         <div class={weather_codes[info.day2_condition]} />
       </div>
     </div>
-    <div class="date-dot-container">
-      <div class="date-container left-date-container">
-        <h3>{current_month} {current_day + 2}</h3>
-      </div>
-    </div>
-    <br />
+
     <div class="container left-container">
+      <h3>{current_month} {current_day + 2}</h3>
       <div class="text-box">
-        <h2>{info.day3_temp}°C</h2>
+        <p>{info.day3_temp}°C</p>
         <div class={weather_codes[info.day3_condition]} />
       </div>
     </div>
-    <div class="date-dot-container">
-      <div class="date-container right-date-container">
-        <h3>{current_month} {current_day + 3}</h3>
-      </div>
-    </div>
-    <br />
+
     <div class="container right-container">
+      <h3>{current_month} {current_day + 3}</h3>
       <div class="text-box">
-        <h2>{info.day4_temp}°C</h2>
+        <p>{info.day4_temp}°C</p>
         <div class={weather_codes[info.day4_condition]} />
       </div>
     </div>
-    <div class="date-dot-container">
-      <div class="date-container left-date-container">
-        <h3>{current_month} {current_day + 4}</h3>
-      </div>
-    </div>
-    <br />
+
     <div class="container left-container">
+      <h3>{current_month} {current_day + 4}</h3>
       <div class="text-box">
-        <h2>{info.day5_temp}°C</h2>
+        <p>{info.day5_temp}°C</p>
         <div class={weather_codes[info.day5_condition]} />
       </div>
     </div>
@@ -147,47 +126,46 @@
     z-index: -1;
   }
 
-  .date-container {
-    position: relative;
-    width: 35%;
-    min-width: 25%;
-    max-width: 35%;
-    height: 100%;
-
-    background-image: linear-gradient(to right, #f86464, #eb4a4a);
-    border-radius: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .date-dot-container {
-    display: flex;
-    /* gap: 66px;  */
-  }
-
   .container {
     position: relative;
     min-width: 150px;
     width: 40%;
-    height: 6em;
-    padding: 15px;
+    height: 8em;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 100px;
-    /* background-color: #edadad; */
-    background-color: #f86464;
+    gap: 15px;
+    border-radius: 25px;
+    border: 2px solid #f86464;
+
+    background: linear-gradient(
+      135deg,
+      rgba(236, 232, 232, 0.205),
+      rgba(223, 219, 219, 0.151)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid #fff;
+    box-shadow: 3px 8px 32px 3px rgba(255, 255, 255, 0.356);
+  }
+  .container h3 {
+    font-size: 22px;
+    font-weight: 650;
   }
 
   .text-box {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
+  }
+  .text-box p {
+    font-size: 22px;
+    font-weight: 550;
   }
 
   .left-date-container {
@@ -214,8 +192,8 @@
     background-repeat: no-repeat;
   }
   .ClearNight {
-    width: 68px;
-    height: 75.5px;
+    width: 58px;
+    height: 65.5px;
     background-image: url("static/ClearNight.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -249,8 +227,8 @@
     background-repeat: no-repeat;
   }
   .RainyDay {
-    height: 50px;
-    width: 70px;
+    height: 54px;
+    width: 59.5px;
     background-image: url("static/RainyDay.svg");
     background-size: contain;
     background-repeat: no-repeat;
